@@ -1,0 +1,14 @@
+extends layouts/main-layout.pug 
+
+block styles 
+    link(rel="stylesheet", href="/css/users.css")
+
+block content 
+    h1.main-content__title Users
+    if users.length > 0
+        ul.main-content__users-list
+            each user in users
+                li.main-content__user 
+                    img(src="/images/user.jpg", alt="User").main-content__user-pic
+                    p #{user.username}
+                    img(src="/images/trash.jpg", alt="Delete").main-content__user-delete
